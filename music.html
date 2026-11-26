@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music Player</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+                background: transparent;
+                font-family: Georgia, serif;
+                overflow: hidden;
+             }
+
+
+        .music-card {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 11px 15px;
+            margin: 12px 0 12px auto;
+            width: max-content;
+            transform-origin: center center;
+            background: linear-gradient(135deg, #F8F9FA, #E8EEF2);
+            border: 1px solid #A9C4D5;
+            border-radius: 13px;
+            box-shadow: 0 5px 18px #26364225;
+            transition: all 0.5s ease;
+        }
+
+
+        .music-card:hover {
+            transform: translateY(-9px) scale(1.04);
+            box-shadow:
+                0 14px 30px #26364245,
+                0 0 22px #7898AA70;
+            border-color: #7898AA;
+            background: linear-gradient(135deg, #FFFFFF, #DCE8EF);
+        }
+
+
+        .vinyl {
+            width: 49px;
+            height: 49px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background:
+                repeating-radial-gradient(
+                    circle,
+                    #344554 0px,
+                    #344554 2px,
+                    #263642 3px,
+                    #344554 4px
+                );
+            display: grid;
+            place-items: center;
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        .vinyl::after {
+            content: "♫";
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background: #A9C4D5;
+            color: #344554;
+            display: grid;
+            place-items: center;
+            font-size: 11px;
+        }
+
+
+        .music-card:hover .vinyl {
+            transform: rotate(180deg) scale(1.2);
+            box-shadow: 0 0 18px #7898AA90;
+        }
+
+
+        .music-details {
+            width: 70px;
+            flex: 0 0 70px;
+            min-width: 0;
+            transition: transform 0.4s ease;
+        }
+
+        .music-label {
+            color: #7898AA;
+            font-family: Arial, sans-serif;
+            font-size: 7px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+        }
+
+        .music-name {
+            color: #344554;
+            font-size: 10px;
+            margin-top: 3px;
+            white-space: nowrap;
+        }
+
+        .music-line {
+            width: 100%;
+            height: 1px;
+            background: #A9C4D5;
+            margin-top: 7px;
+            transition: all 0.4s ease;
+        }
+
+
+        .music-card:hover .music-details {
+            transform: translateX(5px);
+        }
+
+        .music-card:hover .music-label {
+            color: #536F83;
+            letter-spacing: 2.8px;
+        }
+
+        .music-card:hover .music-line {
+            height: 2px;
+            background: #7898AA;
+        }
+
+
+        audio {
+            width: 270px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="music-card">
+
+        <div class="vinyl"></div>
+
+        <div class="music-details">
+            <div class="music-label">Hungarian Rhapsody No. 2</div>
+            <div class="music-name">Cateen</div>
+            <div class="music-line"></div>
+        </div>
+
+        <audio controls loop>
+            <source src="Hungarian Rhapsody No.2 (with Cateen Cadenza).mp3" type="audio/mpeg">
+        </audio>
+
+    </div>
+
+</body>
+</html>
